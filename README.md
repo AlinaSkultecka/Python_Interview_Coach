@@ -21,6 +21,9 @@ A modern desktop app to help you prepare for Python interviews using quizzes and
 
 - Quiz icons by [Freepik - Flaticon](https://www.flaticon.com/free-icons/quiz)
 - Flash cards icons by [manshagraphics - Flaticon](https://www.flaticon.com/free-icons/flash-cards)
+- Quiz questions by [Python MCQ (Multiple Choice Questions)](https://www.sanfoundry.com/1000-python-questions-answers/)
+- Flashcards #1 by [Python Interview Questions](https://www.w3schools.com/python/python_interview_questions.asp)
+- Flashcards #2 by [Python Interview Questions](https://www.interviewbit.com/python-interview-questions/#list-vs-tuple)
 
 
 
