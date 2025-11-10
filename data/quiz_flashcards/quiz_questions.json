@@ -1,0 +1,808 @@
+[
+  {
+    "id": 1,
+    "topic": "History & General",
+    "question": "Who developed Python Programming Language?",
+    "options": [
+      "a) Wick van Rossum",
+      "b) Rasmus Lerdorf",
+      "c) Guido van Rossum",
+      "d) Niene Stom"
+    ],
+    "correct": "c",
+    "explanation": "Python language is designed by a Dutch programmer Guido van Rossum in the Netherlands."
+  },
+  {
+    "id": 2,
+    "topic": "History & General",
+    "question": "Which type of Programming does Python support?",
+    "options": [
+      "a) object-oriented programming",
+      "b) structured programming",
+      "c) functional programming",
+      "d) all of the mentioned"
+    ],
+    "correct": "d",
+    "explanation": "Python is an interpreted programming language, which supports object-oriented, structured, and functional programming."
+  },
+  {
+    "id": 3,
+    "topic": "Variables & Identifiers",
+    "question": "Is Python case sensitive when dealing with identifiers?",
+    "options": [
+      "a) no",
+      "b) yes",
+      "c) machine dependent",
+      "d) none of the mentioned"
+    ],
+    "correct": "b",
+    "explanation": "Case is always significant while dealing with identifiers in python."
+  },
+  {
+    "id": 4,
+    "topic": "Syntax & Structure",
+    "question": "Which of the following is the correct extension of the Python file?",
+    "options": [
+      "a) .python",
+      "b) .pl",
+      "c) .py",
+      "d) .p"
+    ],
+    "correct": "c",
+    "explanation": "‘.py’ is the correct extension of the Python file. Python programs can be written in any text editor. To save these programs we need to save in files with file extension ‘.py’."
+  },
+  {
+    "id": 5,
+    "topic": "History & General",
+    "question": "Is Python code compiled or interpreted?",
+    "options": [
+      "a) Python code is both compiled and interpreted",
+      "b) Python code is neither compiled nor interpreted",
+      "c) Python code is only compiled",
+      "d) Python code is only interpreted"
+    ],
+    "correct": "a",
+    "explanation": "Many languages have been implemented using both compilers and interpreters, including C, Pascal, and Python."
+  },
+  {
+    "id": 6,
+    "topic": "Syntax & Structure",
+    "question": "All keywords in Python are in _________",
+    "options": [
+      "a) Capitalized",
+      "b) lower case",
+      "c) UPPER CASE",
+      "d) None of the mentioned"
+    ],
+    "correct": "d",
+    "explanation": "Most keywords are in lowercase, but some like True, False, and None are capitalized."
+  },
+  {
+    "id": 7,
+    "topic": "Operators & Expressions",
+    "question": "What will be the value of the following Python expression?\n\nprint(4 + 3 % 5)",
+    "options": [
+      "a) 7",
+      "b) 2",
+      "c) 4",
+      "d) 1"
+    ],
+    "correct": "a",
+    "explanation": "In Python, the modulus operator % has higher precedence than addition +. So, the expression is evaluated as 4 + (3 % 5), which is 4 + 3 = 7."
+  },
+  {
+    "id": 8,
+    "topic": "Syntax & Structure",
+    "question": "Which of the following is used to define a block of code in Python language?",
+    "options": [
+      "a) Indentation",
+      "b) Key",
+      "c) Brackets",
+      "d) All of the mentioned"
+    ],
+    "correct": "a",
+    "explanation": "In Python, to define a block of code we use indentation. Indentation refers to whitespaces at the beginning of the line."
+  },
+  {
+    "id": 9,
+    "topic": "Functions & Modules",
+    "question": "Which keyword is used for function in Python language?",
+    "options": [
+      "a) Function",
+      "b) def",
+      "c) Fun",
+      "d) Define"
+    ],
+    "correct": "b",
+    "explanation": "The def keyword is used to create, (or define) a function in python."
+  },
+  {
+    "id": 10,
+    "topic": "Syntax & Structure",
+    "question": "Which of the following character is used to give single-line comments in Python?",
+    "options": [
+      "a) //",
+      "b) #",
+      "c) !",
+      "d) /*"
+    ],
+    "correct": "b",
+    "explanation": "To write single-line comments in Python use the Hash character (#) at the beginning of the line. It is also called number sign or pound sign. To write multi-line comments, close the text between triple quotes.\nExample: “”” comment\ntext “””"
+  },
+  {
+    "id": 11,
+    "topic": "Control Flow",
+    "question": "What will be the output of the following Python code?\n\ni = 1\nwhile True:\n    if i%3 == 0:\n        break\n    print(i)\n    i + = 1",
+    "options": [
+      "a) 1 2 3",
+      "b) SyntaxError",
+      "c) 1 2",
+      "d) none of the mentioned"
+    ],
+    "correct": "b",
+    "explanation": "The output will be a SyntaxError because i + = 1 is invalid syntax in Python. There should be no space between + and =. The correct syntax is i += 1."
+  },
+  {
+    "id": 12,
+    "topic": "Built-in Functions & Standard Library",
+    "question": "Which of the following functions can help us to find the version of python that we are currently working on?",
+    "options": [
+      "a) sys.version(1)",
+      "b) sys.version(0)",
+      "c) sys.version()",
+      "d) sys.version"
+    ],
+    "correct": "d",
+    "explanation": "The function sys.version can help us to find the version of python that we are currently working on. It also contains information on the build number and compiler used. For example, 3.5.2, 2.7.3 etc. this function also returns the current date, time, bits etc along with the version."
+  },
+  {
+    "id": 13,
+    "topic": "Functions & Modules",
+    "question": "Python supports the creation of anonymous functions at runtime, using a construct called __________",
+    "options": [
+      "a) pi",
+      "b) anonymous",
+      "c) lambda",
+      "d) none of the mentioned"
+    ],
+    "correct": "c",
+    "explanation": "In Python, lambda functions are anonymous, meaning they don’t have a name. They are defined using the lambda keyword and can take any number of arguments but only have one expression. Lambdas are useful for creating small, throwaway functions quickly without formally defining them using def."
+  },
+  {
+    "id": 14,
+    "topic": "Operators & Expressions",
+    "question": "What is the order of precedence in python?",
+    "options": [
+      "a) Exponential, Parentheses, Multiplication, Division, Addition, Subtraction",
+      "b) Exponential, Parentheses, Division, Multiplication, Addition, Subtraction",
+      "c) Parentheses, Exponential, Multiplication, Addition, Division, Subtraction",
+      "d) Parentheses, Exponential, Multiplication, Division, Addition, Subtraction"
+    ],
+    "correct": "d",
+    "explanation": "Python follows the PEMDAS rule (similar to BODMAS): Parentheses, Exponentiation, Multiplication/Division, then Addition/Subtraction. Operators at the same level are evaluated left to right."
+  },
+  {
+    "id": 15,
+    "topic": "Operators & Expressions",
+    "question": "What will be the output of the following Python code snippet if x=1?\n\nx<<2",
+    "options": [
+      "a) 4",
+      "b) 2",
+      "c) 1",
+      "d) 8"
+    ],
+    "correct": "a",
+    "explanation": "The binary form of 1 is 0001. The expression x<<2 implies we are performing bitwise left shift on x. This shift yields the value: 0100, which is the binary form of the number 4."
+  },
+  {
+    "id": 16,
+    "topic": "Built-in Functions & Standard Library",
+    "question": "What does pip stand for python?",
+    "options": [
+      "a) Pip Installs Python",
+      "b) Pip Installs Packages",
+      "c) Preferred Installer Program",
+      "d) All of the mentioned"
+    ],
+    "correct": "c",
+    "explanation": "pip is a package manager for python. Which is also called Preferred Installer Program."
+  },
+  {
+    "id": 17,
+    "topic": "Variables & Identifiers",
+    "question": "Which of the following is true for variable names in Python?",
+    "options": [
+      "a) underscore and ampersand are the only two special characters allowed",
+      "b) unlimited length",
+      "c) all private members must have leading and trailing underscores",
+      "d) none of the mentioned"
+    ],
+    "correct": "b",
+    "explanation": "Python allows variable names of unlimited length. Private members usually have only a leading underscore, not both leading and trailing. The ampersand (&) is not permitted in variable names; only the underscore (_) is allowed as a special character."
+  },
+  {
+    "id": 18,
+    "topic": "Operators & Expressions",
+    "question": "What are the values of the following Python expressions?\n\nprint(2**(3**2))\nprint((2**3)**2)\nprint(2**3**2)",
+    "options": [
+      "a) 512, 64, 512",
+      "b) 512, 512, 512",
+      "c) 64, 512, 64",
+      "d) 64, 64, 64"
+    ],
+    "correct": "a",
+    "explanation": "Expression 1 is evaluated as: 2**9, which is equal to 512. Expression 2 is evaluated as 8**2, which is equal to 64. The last expression is evaluated as 2**(3**2). This is because the associativity of ** operator is from right to left. Hence the result of the third expression is 512."
+  },
+  {
+    "id": 19,
+    "topic": "Operators & Expressions",
+    "question": "Which of the following is the truncation division operator in Python?",
+    "options": [
+      "a) |",
+      "b) //",
+      "c) /",
+      "d) %"
+    ],
+    "correct": "b",
+    "explanation": "// is the operator for truncation division. It is called so because it returns only the integer part of the quotient, truncating the decimal part. For example: 20//3 = 6."
+  },
+  {
+    "id": 20,
+    "topic": "Built-in Functions & Standard Library",
+    "question": "What will be the output of the following Python code?\n\nl=[1, 0, 2, 0, 'hello', '', []]\nprint(list(filter(bool, l)))",
+    "options": [
+      "a) [1, 0, 2, 'hello', '', []]",
+      "b) Error",
+      "c) [1, 2, 'hello']",
+      "d) [1, 0, 2, 0, 'hello', '', []]"
+    ],
+    "correct": "c",
+    "explanation": "The function filter(bool, l) removes all false elements from the list l, such as 0, ”, and []. The remaining true elements — 1, 2, and ‘hello’ — are returned as a new list."
+  },
+  {
+    "id": 21,
+    "topic": "Built-in Functions & Standard Library",
+    "question": "Which of the following functions is a built-in function in python?",
+    "options": [
+      "a) factorial()",
+      "b) print()",
+      "c) seed()",
+      "d) sqrt()"
+    ],
+    "correct": "b",
+    "explanation": "The print function is a built-in function which prints a value directly to the system output."
+  },
+  {
+    "id": 22,
+    "topic": "Built-in Functions & Standard Library",
+    "question": "Which of the following is the use of id() function in python?",
+    "options": [
+      "a) Every object doesn’t have a unique id",
+      "b) Id returns the identity of the object",
+      "c) All of the mentioned",
+      "d) None of the mentioned"
+    ],
+    "correct": "b",
+    "explanation": "The id() function in Python returns the identity of an object. This identity is a unique integer (or memory address) that remains constant for the object during its lifetime."
+  },
+  {
+    "id": 23,
+    "topic": "Functions & Modules",
+    "question": "The following python program can work with ____ parameters.\n\ndef f(x):\n    def f1(*args, **kwargs):\n           print(\"Sanfoundry\")\n           return x(*args, **kwargs)\n    return f1",
+    "options": [
+      "a) any number of",
+      "b) 0",
+      "c) 1",
+      "d) 2"
+    ],
+    "correct": "a",
+    "explanation": "The decorator function f defines f1 which uses *args and **kwargs to accept any number of positional and keyword arguments."
+  },
+  {
+    "id": 24,
+    "topic": "Built-in Functions & Standard Library",
+    "question": "What will be the output of the following Python function?\n\nprint(min(max(False,-3,-4), 2,7))",
+    "options": [
+      "a) -4",
+      "b) -3",
+      "c) 2",
+      "d) False"
+    ],
+    "correct": "d",
+    "explanation": "max(False, -3, -4) evaluates to 0 (False is 0), min(0, 2, 7) is 0, which is False."
+  },
+  {
+    "id": 25,
+    "topic": "Data Types & Collections",
+    "question": "Which of the following is not a core data type in Python programming?",
+    "options": [
+      "a) Tuples",
+      "b) Lists",
+      "c) Class",
+      "d) Dictionary"
+    ],
+    "correct": "c",
+    "explanation": "Class is a user-defined data type."
+  },
+  {
+    "id": 26,
+    "topic": "Built-in Functions & Standard Library",
+    "question": "What will be the output of the following Python expression if x=56.236?\n\nprint(\"%.2f\"%x)",
+    "options": [
+      "a) 56.236",
+      "b) 56.23",
+      "c) 56.0000",
+      "d) 56.24"
+    ],
+    "correct": "d",
+    "explanation": "Rounds to 2 decimal places, so output is 56.24."
+  },
+  {
+    "id": 27,
+    "topic": "Functions & Modules",
+    "question": "Which of these is the definition for packages in Python?",
+    "options": [
+      "a) A set of main modules",
+      "b) A folder of python modules",
+      "c) A number of files containing Python definitions and statements",
+      "d) A set of programs making use of Python modules"
+    ],
+    "correct": "b",
+    "explanation": "A package is defined as a folder containing Python modules, along with a special __init__.py file."
+  },
+  {
+    "id": 28,
+    "topic": "Data Types & Collections",
+    "question": "What will be the output of the following Python function?\n\nprint(len([\"hello\",2, 4, 6]))",
+    "options": [
+      "a) Error",
+      "b) 6",
+      "c) 4",
+      "d) 3"
+    ],
+    "correct": "c",
+    "explanation": "len([\"hello\",2,4,6]) returns 4, as there are 4 elements in the list."
+  },
+  {
+    "id": 29,
+    "topic": "Data Types & Collections",
+    "question": "What will be the output of the following Python code?\n\nx = 'abcd'\nfor i in x:\n    print(i.upper())",
+    "options": [
+      "a)\na\nB\nC\nD",
+      "b) a b c d",
+      "c) error",
+      "d)\nA\nB\nC\nD"
+    ],
+    "correct": "d",
+    "explanation": "Each character in x is converted to uppercase and printed."
+  },
+  {
+    "id": 30,
+    "topic": "Variables & Identifiers",
+    "question": "What is the order of namespaces in which Python looks for an identifier?",
+    "options": [
+      "a) Python first searches the built-in namespace, then the global namespace and finally the local namespace",
+      "b) Python first searches the built-in namespace, then the local namespace and finally the global namespace",
+      "c) Python first searches the local namespace, then the global namespace and finally the built-in namespace",
+      "d) Python first searches the global namespace, then the local namespace and finally the built-in namespace"
+    ],
+    "correct": "c",
+    "explanation": "LEGB Rule: Local -> Enclosing -> Global -> Built-in."
+  },
+  {
+    "id": 31,
+    "topic": "Data Types & Collections",
+    "question": "What will be the output of the following Python code snippet?\n\nfor i in [1, 2, 3, 4][::-1]:\n    print(i, end=' ')",
+    "options": [
+      "a) 4 3 2 1",
+      "b) error",
+      "c) 1 2 3 4",
+      "d) none of the mentioned"
+    ],
+    "correct": "a",
+    "explanation": "The list is reversed with [::-1], resulting in 4 3 2 1."
+  },
+  {
+    "id": 32,
+    "topic": "Operators & Expressions",
+    "question": "What will be the output of the following Python statement?\n\nprint(\"a\"+\"bc\")",
+    "options": [
+      "a) bc",
+      "b) abc",
+      "c) a",
+      "d) bca"
+    ],
+    "correct": "b",
+    "explanation": "String concatenation: 'a' + 'bc' gives 'abc'."
+  },
+  {
+    "id": 33,
+    "topic": "Built-in Functions & Standard Library",
+    "question": "Which function is called when the following Python program is executed?\n\nf = foo()\nformat(f)",
+    "options": [
+      "a) str()",
+      "b) format()",
+      "c) __str__()",
+      "d) __format__()"
+    ],
+    "correct": "d",
+    "explanation": "format(f) calls f.__format__()."
+  },
+  {
+    "id": 34,
+    "topic": "Syntax & Structure",
+    "question": "Which one of the following is not a keyword in Python language?",
+    "options": [
+      "a) pass",
+      "b) eval",
+      "c) assert",
+      "d) nonlocal"
+    ],
+    "correct": "b",
+    "explanation": "eval can be used as a variable, it's not a Python keyword."
+  },
+  {
+    "id": 35,
+    "topic": "OOP (Object-Oriented Programming)",
+    "question": "What will be the output of the following Python code?\n\nclass tester:\n    def __init__(self, id):\n        self.id = str(id)\n        id=\"224\"\n \ntemp = tester(12)\nprint(temp.id)",
+    "options": [
+      "a) 12",
+      "b) 224",
+      "c) None",
+      "d) Error"
+    ],
+    "correct": "a",
+    "explanation": "self.id is assigned the value '12' as a string."
+  },
+  {
+    "id": 36,
+    "topic": "Data Types & Collections",
+    "question": "What will be the output of the following Python program?\n\ndef foo(x):\n    x[0] = ['def']\n    x[1] = ['abc']\n    return id(x)\nq = ['abc', 'def']\nprint(id(q) == foo(q))",
+    "options": [
+      "a) Error",
+      "b) None",
+      "c) False",
+      "d) True"
+    ],
+    "correct": "d",
+    "explanation": "id(q) and id(x) are the same, so output is True."
+  },
+  {
+    "id": 37,
+    "topic": "Built-in Functions & Standard Library",
+    "question": "Which module in the python standard library parses options received from the command line?",
+    "options": [
+      "a) getarg",
+      "b) getopt",
+      "c) main",
+      "d) os"
+    ],
+    "correct": "b",
+    "explanation": "getopt parses command-line options."
+  },
+  {
+    "id": 38,
+    "topic": "Data Types & Collections",
+    "question": "What will be the output of the following Python program?\n\nz=set('abc')\nz.add('san')\nz.update(set(['p', 'q']))\nprint(z)",
+    "options": [
+      "a) {‘a’, ‘c’, ‘c’, ‘p’, ‘q’, ‘s’, ‘a’, ‘n’}",
+      "b) {‘abc’, ‘p’, ‘q’, ‘san’}",
+      "c) {‘a’, ‘b’, ‘c’, ‘p’, ‘q’, ‘san’}",
+      "d) {‘a’, ‘b’, ‘c’, [‘p’, ‘q’], ‘san}"
+    ],
+    "correct": "c",
+    "explanation": "Output is a set with unique characters: 'a', 'b', 'c', 'p', 'q', and 'san'."
+  },
+  {
+    "id": 39,
+    "topic": "Operators & Expressions",
+    "question": "What arithmetic operators cannot be used with strings in Python?",
+    "options": [
+      "a) *",
+      "b) –",
+      "c) +",
+      "d) All of the mentioned"
+    ],
+    "correct": "b",
+    "explanation": "+ is concatenation, * is repetition, – cannot be used with strings."
+  },
+  {
+    "id": 40,
+    "topic": "Built-in Functions & Standard Library",
+    "question": "What will be the output of the following Python code?\n\nprint(\"abc. DEF\".capitalize())",
+    "options": [
+      "a) Abc. def",
+      "b) abc. def",
+      "c) Abc. Def",
+      "d) ABC. DEF"
+    ],
+    "correct": "a",
+    "explanation": "The first letter is capitalized, the rest are lowercase."
+  },
+  {
+    "id": 41,
+    "topic": "Data Types & Collections",
+    "question": "Which of the following statements is used to create an empty set in Python?",
+    "options": [
+      "a) ( )",
+      "b) [ ]",
+      "c) { }",
+      "d) set()"
+    ],
+    "correct": "d",
+    "explanation": "set() creates an empty set, {} creates a dictionary."
+  },
+  {
+    "id": 42,
+    "topic": "Data Types & Collections",
+    "question": "What will be the value of ‘result’ in following Python program?\n\nlist1 = [1,2,3,4]\nlist2 = [2,4,5,6]\nlist3 = [2,6,7,8]\nresult = list()\nresult.extend(i for i in list1 if i not in (list2+list3) and i not in result)\nresult.extend(i for i in list2 if i not in (list1+list3) and i not in result)\nresult.extend(i for i in list3 if i not in (list1+list2) and i not in result)\nprint(result)",
+    "options": [
+      "a) [1, 3, 5, 7, 8]",
+      "b) [1, 7, 8]",
+      "c) [1, 2, 4, 7, 8]",
+      "d) error"
+    ],
+    "correct": "a",
+    "explanation": "The unique elements from each list are kept, so [1, 3, 5, 7, 8]."
+  },
+  {
+    "id": 43,
+    "topic": "Data Types & Collections",
+    "question": "To add a new element to a list we use which Python command?",
+    "options": [
+      "a) list1.addEnd(5)",
+      "b) list1.addLast(5)",
+      "c) list1.append(5)",
+      "d) list1.add(5)"
+    ],
+    "correct": "c",
+    "explanation": "list.append() adds an element to the end of a list."
+  },
+  {
+    "id": 44,
+    "topic": "Built-in Functions & Standard Library",
+    "question": "What will be the output of the following Python code?\n\nprint('*', \"abcde\".center(6), '*', sep='')",
+    "options": [
+      "a) *  abcde *",
+      "b) *abcde *",
+      "c) * abcde*",
+      "d) * abcde  *"
+    ],
+    "correct": "b",
+    "explanation": "abcde is centered in 6 spaces, with one space on right, so output is *abcde *."
+  },
+  {
+    "id": 45,
+    "topic": "Data Types & Collections",
+    "question": "What will be the output of the following Python code?\n\nlist1 = [1, 3]\nlist2 = list1\nlist1[0] = 4\nprint(list2)",
+    "options": [
+      "a) [1, 4]",
+      "b) [1, 3, 4]",
+      "c) [4, 3]",
+      "d) [1, 3]"
+    ],
+    "correct": "c",
+    "explanation": "Both list1 and list2 refer to the same object, so changes in list1 reflect in list2."
+  },
+  {
+    "id": 46,
+    "topic": "Functions & Modules",
+    "question": "Which one of the following is the use of function in python?",
+    "options": [
+      "a) Functions don’t provide better modularity for your application",
+      "b) you can’t also create your own functions",
+      "c) Functions are reusable pieces of programs",
+      "d) All of the mentioned"
+    ],
+    "correct": "c",
+    "explanation": "Functions are reusable blocks of code."
+  },
+  {
+    "id": 47,
+    "topic": "Data Types & Collections",
+    "question": "Which of the following Python statements will result in the output: 6?\n\nA = [[1, 2, 3],\n     [4, 5, 6],\n     [7, 8, 9]]",
+    "options": [
+      "a) A[2][1]",
+      "b) A[1][2]",
+      "c) A[3][2]",
+      "d) A[2][3]"
+    ],
+    "correct": "b",
+    "explanation": "A[1][2] gives the value 6."
+  },
+  {
+    "id": 48,
+    "topic": "Variables & Identifiers",
+    "question": "What is the maximum possible length of an identifier in Python?",
+    "options": [
+      "a) 79 characters",
+      "b) 31 characters",
+      "c) 63 characters",
+      "d) none of the mentioned"
+    ],
+    "correct": "d",
+    "explanation": "Python identifiers can be of any length."
+  },
+  {
+    "id": 49,
+    "topic": "Control Flow",
+    "question": "What will be the output of the following Python program?\n\ni = 0\nwhile i < 5:\n    print(i)\n    i += 1\n    if i == 3:\n        break\nelse:\n    print(0)",
+    "options": [
+      "a) error",
+      "b)\n0\n1\n2\n3\n0",
+      "c)\n0\n1\n2",
+      "d) none of the mentioned"
+    ],
+    "correct": "c",
+    "explanation": "Loop breaks when i==3, so prints 0 1 2."
+  },
+  {
+    "id": 50,
+    "topic": "Data Types & Collections",
+    "question": "What will be the output of the following Python code?\n\nx = 'abcd'\nfor i in range(len(x)):\n    print(i)",
+    "options": [
+      "a) error",
+      "b) 1 2 3 4",
+      "c) a b c d",
+      "d) 0 1 2 3"
+    ],
+    "correct": "d",
+    "explanation": "i iterates from 0 to 3."
+  },
+  {
+    "id": 51,
+    "topic": "Functions & Modules",
+    "question": "What are the two main types of functions in Python?",
+    "options": [
+      "a) System function",
+      "b) Custom function",
+      "c) Built-in function & User defined function",
+      "d) User function"
+    ],
+    "correct": "c",
+    "explanation": "Built-in and user-defined."
+  },
+  {
+    "id": 52,
+    "topic": "Data Types & Collections",
+    "question": "What will be the output of the following Python program?\n\ndef addItem(listParam):\n    listParam += [1]\n \nmylist = [1, 2, 3, 4]\naddItem(mylist)\nprint(len(mylist))",
+    "options": [
+      "a) 5",
+      "b) 8",
+      "c) 2",
+      "d) 1"
+    ],
+    "correct": "a",
+    "explanation": "listParam += [1] adds 1 to mylist, making its length 5."
+  },
+  {
+    "id": 53,
+    "topic": "Data Types & Collections",
+    "question": "Which of the following is a Python tuple?",
+    "options": [
+      "a) {1, 2, 3}",
+      "b) {}",
+      "c) [1, 2, 3]",
+      "d) (1, 2, 3)"
+    ],
+    "correct": "d",
+    "explanation": "(1, 2, 3) is a tuple."
+  },
+  {
+    "id": 54,
+    "topic": "Data Types & Collections",
+    "question": "What will be the output of the following Python code snippet?\n\nz=set('abc$de')\nprint('a' in z)",
+    "options": [
+      "a) Error",
+      "b) True",
+      "c) False",
+      "d) No output"
+    ],
+    "correct": "b",
+    "explanation": "'a' is present in the set."
+  },
+  {
+    "id": 55,
+    "topic": "Built-in Functions & Standard Library",
+    "question": "What will be the output of the following Python expression?\n\nprint(round(4.576))",
+    "options": [
+      "a) 4",
+      "b) 4.6",
+      "c) 5",
+      "d) 4.5"
+    ],
+    "correct": "c",
+    "explanation": "round(4.576) gives 5."
+  },
+  {
+    "id": 56,
+    "topic": "Built-in Functions & Standard Library",
+    "question": "Which of the following is a feature of Python DocString?",
+    "options": [
+      "a) In Python all functions should have a docstring",
+      "b) Docstrings can be accessed by the __doc__ attribute on objects",
+      "c) It provides a convenient way of associating documentation with Python modules, functions, classes, and methods",
+      "d) All of the mentioned"
+    ],
+    "correct": "d",
+    "explanation": "Docstrings provide documentation for modules, functions, classes, methods."
+  },
+  {
+    "id": 57,
+    "topic": "Built-in Functions & Standard Library",
+    "question": "What will be the output of the following Python code?\n\nprint(\"Hello {0[0]} and {0[1]}\".format(('foo', 'bin')))",
+    "options": [
+      "a) Hello (‘foo’, ‘bin’) and (‘foo’, ‘bin’)",
+      "b) Error",
+      "c) Hello foo and bin",
+      "d) None of the mentioned"
+    ],
+    "correct": "c",
+    "explanation": "Accesses tuple elements inside format."
+  },
+  {
+    "id": 58,
+    "topic": "Built-in Functions & Standard Library",
+    "question": "What is output of print(math.pow(3, 2))?",
+    "options": [
+      "a) 9.0",
+      "b) None",
+      "c) 9",
+      "d) None of the mentioned"
+    ],
+    "correct": "a",
+    "explanation": "math.pow returns a float."
+  },
+  {
+    "id": 59,
+    "topic": "Built-in Functions & Standard Library",
+    "question": "Which of the following is the use of id() function in python?",
+    "options": [
+      "a) Every object in Python doesn’t have a unique id",
+      "b) In Python Id function returns the identity of the object",
+      "c) None of the mentioned",
+      "d) All of the mentioned"
+    ],
+    "correct": "b",
+    "explanation": "id() returns the identity (unique id) of the object."
+  },
+  {
+    "id": 60,
+    "topic": "Data Types & Collections",
+    "question": "What will be the output of the following Python code?\n\nx = [[0], [1]]\nprint((' '.join(list(map(str, x))),))",
+    "options": [
+      "a) 01",
+      "b) [0] [1]",
+      "c) (’01’)",
+      "d) (‘[0] [1]’,)"
+    ],
+    "correct": "d",
+    "explanation": "Each sublist is converted to string, joined with a space, then put in a tuple."
+  },
+  {
+    "id": 61,
+    "topic": "Other / Advanced Topics",
+    "question": "The process of pickling in Python includes ____________",
+    "options": [
+      "a) conversion of a Python object hierarchy into byte stream",
+      "b) conversion of a datatable into a list",
+      "c) conversion of a byte stream into Python object hierarchy",
+      "d) conversion of a list into a datatable"
+    ],
+    "correct": "a",
+    "explanation": "Pickling is serializing Python objects to a byte stream."
+  },
+  {
+    "id": 62,
+    "topic": "Control Flow",
+    "question": "What will be the output of the following Python code?\n\ndef foo():\n    try:\n        return 1\n    finally:\n        return 2\nk = foo()\nprint(k)",
+    "options": [
+      "a) error, there is more than one return statement in a single try-finally block",
+      "b) 3",
+      "c) 2",
+      "d) 1"
+    ],
+    "correct": "c",
+    "explanation": "finally always runs and its return overrides try's return."
+  }
+]
