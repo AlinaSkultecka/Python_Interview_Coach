@@ -1,13 +1,13 @@
 [
   {
     "id": 1,
-    "topic": "Scope",
+    "topic": "Language & Syntax",
     "question": "What is the difference between global and local scope in Python?",
     "answer": "A variable created inside a function belongs to the local scope of that function, and can only be used inside that function. A variable created in the main body of the Python code is a global variable and belongs to the global scope. Global variables are available from within any scope, global and local."
   },
   {
     "id": 2,
-    "topic": "Iteration",
+    "topic": "Control Flow & Iteration",
     "question": "What is an iterator in Python?",
     "answer": "An iterator is an object that contains a countable number of values and can be iterated upon. In Python, an iterator is an object which implements the iterator protocol, consisting of the methods __iter__() and __next__()."
   },
@@ -19,37 +19,37 @@
   },
   {
     "id": 4,
-    "topic": "Functions",
+    "topic": "Functions & Modules",
     "question": "When should you use lambda functions in Python?",
     "answer": "Use lambda functions when an anonymous function is required for a short period of time."
   },
   {
     "id": 5,
-    "topic": "Data Types",
+    "topic": "Data & Collections",
     "question": "What are the differences between lists, tuples, and sets in Python?",
     "answer": "Lists are ordered and changeable, and allow duplicate values. Tuples are ordered but immutable, and also allow duplicates. Sets are unordered, unindexed, contain only unique items, and are changeable, but you cannot modify individual elements by index."
   },
   {
     "id": 6,
-    "topic": "Strings",
+    "topic": "Data & Collections",
     "question": "How can you check if all the characters in a string are alphanumeric?",
     "answer": "You can use the isalnum() method, which returns True if all the characters are alphanumeric (letters a-z and numbers 0-9)."
   },
   {
     "id": 7,
-    "topic": "Data Types",
+    "topic": "Data & Collections",
     "question": "How can you convert a string to an integer in Python?",
     "answer": "You can use the int() function, for example: num = '5'; convert = int(num)"
   },
   {
     "id": 8,
-    "topic": "Syntax & Style",
+    "topic": "Language & Syntax",
     "question": "What is indentation in Python, and why is it important?",
     "answer": "Indentation refers to the spaces at the beginning of a code line. In Python, indentation is used to indicate a block of code. Python will give you an error if you skip the indentation."
   },
   {
     "id": 9,
-    "topic": "Data Types",
+    "topic": "Data & Collections",
     "question": "Which collection in Python does not allow duplicate members?",
     "answer": "Set."
   },
@@ -61,49 +61,49 @@
   },
   {
     "id": 11,
-    "topic": "Built-in Functions",
+    "topic": "Functions & Modules",
     "question": "What is the correct syntax to output the type of a variable or object in Python?",
     "answer": "print(type(x))"
   },
   {
     "id": 12,
-    "topic": "Data Types",
+    "topic": "Data & Collections",
     "question": "Can you list Python's primary built-in data types, in categories?",
     "answer": "Text Type: str; Numeric Types: int, float, complex; Sequence Types: list, tuple, range; Mapping Type: dict; Set Types: set, frozenset; Boolean Type: bool; Binary Types: bytes, bytearray, memoryview."
   },
   {
     "id": 13,
-    "topic": "Operators",
+    "topic": "Language & Syntax",
     "question": "What are Membership Operators in Python?",
     "answer": "Membership operators are used to test if a sequence is present in an object. The in and not in operators are examples of these. For example: x = ['apple', 'banana']; print('banana' in x) # returns True; print('pineapple' not in x) # returns True."
   },
   {
     "id": 14,
-    "topic": "Syntax & Style",
+    "topic": "Language & Syntax",
     "question": "Which statement can be used to avoid errors if an if statement has no content?",
     "answer": "The pass statement."
   },
   {
     "id": 15,
-    "topic": "Functions",
+    "topic": "Functions & Modules",
     "question": "What are Arbitrary Arguments (*args) in Python?",
     "answer": "Arbitrary Arguments are often shortened to *args in Python documentation. If you do not know how many arguments will be passed into your function, add a * before the parameter name in the function definition. The function will receive a tuple of arguments."
   },
   {
     "id": 16,
-    "topic": "Modules",
+    "topic": "Functions & Modules",
     "question": "How can you create and use a Module in Python?",
     "answer": "To create a module, save the code you want in a file with the .py extension. For example: def greeting(name): print('Hello, ' + name). Now import it with import mymodule, and use mymodule.greeting('Jonathan')."
   },
   {
     "id": 17,
-    "topic": "Data Types",
+    "topic": "Data & Collections",
     "question": "Can you copy a List in Python by simply writing: list2 = list1?",
     "answer": "No, because list2 will only be a reference to list1. Changes made in list1 will also affect list2. To make a copy of a list, use copy() or the list() method."
   },
   {
     "id": 18,
-    "topic": "Strings",
+    "topic": "Data & Collections",
     "question": "How can you return a range of characters of a string (slicing)?",
     "answer": "You can return a range of characters by using slice syntax. For example, to get characters from position 2 to 5 (not included): b = 'Hello, World!'; print(b[2:5])"
   },
@@ -115,49 +115,49 @@
   },
   {
     "id": 20,
-    "topic": "General",
+    "topic": "Language & Syntax",
     "question": "What is Python? What are the benefits of using Python?",
     "answer": "Python is a high-level, interpreted, general-purpose programming language with easy-to-learn syntax, supports objects, modules, threads, exception-handling, and automatic memory management. Benefits include rapid application development, large community, and extensive standard library."
   },
   {
     "id": 21,
-    "topic": "Language Fundamentals",
+    "topic": "Language & Syntax",
     "question": "What is a dynamically typed language?",
     "answer": "A dynamically typed language checks the data type of a variable at runtime. In Python, you don't need to declare variable types explicitly; types are checked during execution."
   },
   {
     "id": 22,
-    "topic": "Language Fundamentals",
+    "topic": "Language & Syntax",
     "question": "What is an interpreted language?",
     "answer": "An interpreted language executes instructions line by line from the source code, without an intermediary compilation step. Python is interpreted."
   },
   {
     "id": 23,
-    "topic": "Syntax & Style",
+    "topic": "Language & Syntax",
     "question": "What is PEP 8 and why is it important?",
     "answer": "PEP 8 is the official Python style guide, providing guidelines for writing readable code. Adhering to PEP 8 makes code consistent and maintainable."
   },
   {
     "id": 24,
-    "topic": "Scope",
+    "topic": "Language & Syntax",
     "question": "What is scope in Python?",
     "answer": "Scope refers to the region of code where a variable is recognized. Python has local, global, module, and built-in scopes."
   },
   {
     "id": 25,
-    "topic": "Data Types",
+    "topic": "Data & Collections",
     "question": "What are lists and tuples? What is the key difference between the two?",
     "answer": "Both are sequence data types, but lists are mutable (can change) and tuples are immutable (cannot change)."
   },
   {
     "id": 26,
-    "topic": "Syntax & Style",
+    "topic": "Language & Syntax",
     "question": "What is pass in Python?",
     "answer": "The pass statement does nothing and is used as a placeholder in blocks where code is syntactically required but not needed."
   },
   {
     "id": 27,
-    "topic": "Modules",
+    "topic": "Functions & Modules",
     "question": "What are modules and packages in Python?",
     "answer": "A module is a Python file with code (functions, classes, variables). A package is a directory with an __init__.py file and modules inside, supporting hierarchical module structure."
   },
@@ -181,37 +181,37 @@
   },
   {
     "id": 31,
-    "topic": "Control Flow",
+    "topic": "Control Flow & Iteration",
     "question": "What is break, continue and pass in Python?",
     "answer": "'break' terminates a loop; 'continue' skips the rest of the current loop iteration; 'pass' does nothing (placeholder)."
   },
   {
     "id": 32,
-    "topic": "Testing",
+    "topic": "Testing, Docs & Environment",
     "question": "What are unit tests in Python?",
     "answer": "Unit tests test individual components of software to ensure each part functions correctly. Python’s built-in framework is called unittest."
   },
   {
     "id": 33,
-    "topic": "Documentation",
+    "topic": "Testing, Docs & Environment",
     "question": "What is docstring in Python?",
     "answer": "A docstring is a multi-line string used to document code segments, such as functions and classes."
   },
   {
     "id": 34,
-    "topic": "Strings",
+    "topic": "Data & Collections",
     "question": "What is slicing in Python?",
     "answer": "Slicing means accessing a range of elements in sequences like lists, tuples, or strings using the syntax [start:stop:step]."
   },
   {
     "id": 35,
-    "topic": "Scripts & Environments",
+    "topic": "Testing, Docs & Environment",
     "question": "How can you make a Python script executable on Unix?",
     "answer": "Start the script file with #!/usr/bin/env python and give it execute permissions using chmod."
   },
   {
     "id": 36,
-    "topic": "Data Types",
+    "topic": "Data & Collections",
     "question": "What is the difference between Python Arrays and lists?",
     "answer": "Arrays can only contain elements of the same type and are more memory-efficient. Lists can contain mixed types but use more memory."
   }

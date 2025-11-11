@@ -1,5 +1,5 @@
 from PySide6.QtWidgets import QWidget, QVBoxLayout, QLabel, QPushButton
-from data.question_generator import generate_open_question
+from data.question_generator import generate_flashcard
 
 class FlashcardsView(QWidget):
     def __init__(self, main_menu):
@@ -8,7 +8,7 @@ class FlashcardsView(QWidget):
         self.setWindowTitle("Flashcards")
         self.setFixedSize(360, 640)
 
-        self.cards = [generate_open_question() for _ in range(2)]  # e.g., 2 random cards
+        self.cards = [generate_flashcard() for _ in range(2)]   # e.g., 2 random cards
         self.current_index = 0
 
         self.layout = QVBoxLayout()
@@ -36,13 +36,13 @@ class FlashcardsView(QWidget):
 
     def show_card(self):
         card = self.cards[self.current_index]
-        self.question_label.setText(card["question"])
+        self.question_label.setText(card.question)
         self.answer_label.setText("")
         self.btn_show.setEnabled(True)
 
     def show_answer(self):
         card = self.cards[self.current_index]
-        self.answer_label.setText(card["answer"])
+        self.answer_label.setText(card.answer)
         self.btn_show.setEnabled(False)
 
     def next_card(self):
