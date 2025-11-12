@@ -1,10 +1,10 @@
 from PySide6.QtWidgets import (
-    QWidget, QVBoxLayout, QGridLayout, QLabel, QPushButton, QFrame, QSpacerItem, QSizePolicy
+    QWidget, QVBoxLayout, QLabel
 )
 from PySide6.QtCore import Qt
 from PySide6.QtGui import QPalette, QColor
 
-import widgets.big_level_button
+import pages.ui.big_level_button
 from .play_quiz_view import PlayQuizView
 from .flashcards_view import FlashcardsView
 
@@ -60,7 +60,7 @@ class MainMenuView(QWidget):
         main_layout.addWidget(header, alignment=Qt.AlignLeft)
 
         # Play Quiz Button
-        btn_play = widgets.big_level_button.GradientCardButton(
+        btn_play = pages.ui.big_level_button.GradientCardButton(
             "Level 1", "Play a Quiz",
             "#D959A8", "#D95968",
             image_path="brain.png"  # optional
@@ -69,7 +69,7 @@ class MainMenuView(QWidget):
         main_layout.addWidget(btn_play)
 
         # Flashcards Button
-        btn_flashcards = widgets.big_level_button.GradientCardButton(
+        btn_flashcards = pages.ui.big_level_button.GradientCardButton(
             "Level 2", "Flashcards",
             "#6A9ABE", "#6456A3",
             image_path="flash-cards.png"  # optional
