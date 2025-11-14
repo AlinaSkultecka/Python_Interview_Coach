@@ -2,7 +2,7 @@ from PySide6.QtWidgets import (
     QWidget, QVBoxLayout, QHBoxLayout, QLabel, QPushButton,
     QMessageBox, QSpacerItem, QSizePolicy
 )
-from PySide6.QtCore import Qt, QTimer
+from PySide6.QtCore import Qt
 
 from data.question_generator import generate_quiz_question
 from pages.ui.feedback_overlay import FeedbackOverlay
@@ -53,7 +53,7 @@ class PlayQuizView(QWidget):
         outer.addWidget(top_row)
 
         # ===========================================================
-        # ROW 2: GRADIENT CONTENT AREA (rounded corners)
+        # ROW 2: CONTENT AREA — Gradient background
         # ===========================================================
         content = QWidget()
         content.setObjectName("Root")
@@ -76,7 +76,6 @@ class PlayQuizView(QWidget):
             /* Top bar */
             QWidget#TopRow {
                 background: white;
-                border-radius: 0px;    /* flat bar */
             }
 
             /* Gradient content panel */

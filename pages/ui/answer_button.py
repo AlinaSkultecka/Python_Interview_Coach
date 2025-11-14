@@ -33,10 +33,6 @@ class AnswerButton(QFrame):
             QFrame#AnswerButton:hover {
                 background: #f1f4ff;
             }
-            /* Selected (your yellow highlight while choosing) */
-            QFrame#AnswerButton[selected="true"] {
-                background: #ffd84d;
-            }
             /* NEW: correctness states for transient feedback */
             QFrame#AnswerButton[state="correct"] {
                 background: #9FE69F;
