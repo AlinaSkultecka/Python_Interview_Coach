@@ -140,12 +140,12 @@
       "d) none of the mentioned"
     ],
     "correct": "b",
-    "explanation": "The output will be a SyntaxError because i + = 1 is invalid syntax in Python. There should be no space between + and =. The correct syntax is i += 1."
+    "explanation": "The output will be a SyntaxError because i += 1 is invalid syntax in Python. There should be no space between + and =. The correct syntax is i += 1."
   },
   {
     "id": 12,
     "topic": "Built-in Functions & Standard Library",
-    "question": "Which of the following functions can help us to find the version of python that we are currently working on?",
+    "question": "Which of the following functions can help us to find the version of Python that we are currently working on?",
     "options": [
       "a) sys.version(1)",
       "b) sys.version(0)",
@@ -171,7 +171,7 @@
   {
     "id": 14,
     "topic": "Operators & Expressions",
-    "question": "What is the order of precedence in python?",
+    "question": "What is the order of precedence in Python?",
     "options": [
       "a) Exponential, Parentheses, Multiplication, Division, Addition, Subtraction",
       "b) Exponential, Parentheses, Division, Multiplication, Addition, Subtraction",
@@ -197,7 +197,7 @@
   {
     "id": 16,
     "topic": "Built-in Functions & Standard Library",
-    "question": "What does pip stand for python?",
+    "question": "What does pip stand for Python?",
     "options": [
       "a) Pip Installs Python",
       "b) Pip Installs Packages",
@@ -262,7 +262,7 @@
   {
     "id": 21,
     "topic": "Built-in Functions & Standard Library",
-    "question": "Which of the following functions is a built-in function in python?",
+    "question": "Which of the following functions is a built-in function in Python?",
     "options": [
       "a) factorial()",
       "b) print()",
@@ -275,7 +275,7 @@
   {
     "id": 22,
     "topic": "Built-in Functions & Standard Library",
-    "question": "Which of the following is the use of id() function in python?",
+    "question": "Which of the following is the use of id() function in Python?",
     "options": [
       "a) Every object doesn’t have a unique id",
       "b) Id returns the identity of the object",
@@ -288,7 +288,7 @@
   {
     "id": 23,
     "topic": "Functions & Modules",
-    "question": "The following python program can work with ____ parameters.\n\ndef f(x):\n    def f1(*args, **kwargs):\n           print(\"Sanfoundry\")\n           return x(*args, **kwargs)\n    return f1",
+    "question": "The following Python program can work with ____ parameters.\n\ndef f(x):\n    def f1(*args, **kwargs):\n           print(\"Sanfoundry\")\n           return x(*args, **kwargs)\n    return f1",
     "options": [
       "a) any number of",
       "b) 0",
@@ -368,10 +368,10 @@
     "topic": "Data Types & Collections",
     "question": "What will be the output of the following Python code?\n\nx = 'abcd'\nfor i in x:\n    print(i.upper())",
     "options": [
-      "a)\na\nB\nC\nD",
+      "a) A B C D",
       "b) a b c d",
       "c) error",
-      "d)\nA\nB\nC\nD"
+      "d) A\n    B\n    C\n    D"
     ],
     "correct": "d",
     "explanation": "Each character in x is converted to uppercase and printed."
@@ -452,7 +452,7 @@
       "d) Error"
     ],
     "correct": "a",
-    "explanation": "self.id is assigned the value '12' as a string."
+    "explanation": "self.id stores 12 inside the object. The line id = 224 only changes the local variable id inside the function, not the object's attribute. That’s why temp.id prints 12."
   },
   {
     "id": 36,
@@ -470,7 +470,7 @@
   {
     "id": 37,
     "topic": "Built-in Functions & Standard Library",
-    "question": "Which module in the python standard library parses options received from the command line?",
+    "question": "Which module in the Python standard library parses options received from the command line?",
     "options": [
       "a) getarg",
       "b) getopt",
@@ -535,19 +535,6 @@
   {
     "id": 42,
     "topic": "Data Types & Collections",
-    "question": "What will be the value of ‘result’ in following Python program?\n\nlist1 = [1,2,3,4]\nlist2 = [2,4,5,6]\nlist3 = [2,6,7,8]\nresult = list()\nresult.extend(i for i in list1 if i not in (list2+list3) and i not in result)\nresult.extend(i for i in list2 if i not in (list1+list3) and i not in result)\nresult.extend(i for i in list3 if i not in (list1+list2) and i not in result)\nprint(result)",
-    "options": [
-      "a) [1, 3, 5, 7, 8]",
-      "b) [1, 7, 8]",
-      "c) [1, 2, 4, 7, 8]",
-      "d) error"
-    ],
-    "correct": "a",
-    "explanation": "The unique elements from each list are kept, so [1, 3, 5, 7, 8]."
-  },
-  {
-    "id": 43,
-    "topic": "Data Types & Collections",
     "question": "To add a new element to a list we use which Python command?",
     "options": [
       "a) list1.addEnd(5)",
@@ -559,7 +546,7 @@
     "explanation": "list.append() adds an element to the end of a list."
   },
   {
-    "id": 44,
+    "id": 43,
     "topic": "Built-in Functions & Standard Library",
     "question": "What will be the output of the following Python code?\n\nprint('*', \"abcde\".center(6), '*', sep='')",
     "options": [
@@ -572,7 +559,7 @@
     "explanation": "abcde is centered in 6 spaces, with one space on right, so output is *abcde *."
   },
   {
-    "id": 45,
+    "id": 44,
     "topic": "Data Types & Collections",
     "question": "What will be the output of the following Python code?\n\nlist1 = [1, 3]\nlist2 = list1\nlist1[0] = 4\nprint(list2)",
     "options": [
@@ -585,9 +572,9 @@
     "explanation": "Both list1 and list2 refer to the same object, so changes in list1 reflect in list2."
   },
   {
-    "id": 46,
+    "id": 45,
     "topic": "Functions & Modules",
-    "question": "Which one of the following is the use of function in python?",
+    "question": "Which one of the following is the use of function in Python?",
     "options": [
       "a) Functions don’t provide better modularity for your application",
       "b) you can’t also create your own functions",
@@ -598,9 +585,9 @@
     "explanation": "Functions are reusable blocks of code."
   },
   {
-    "id": 47,
+    "id": 46,
     "topic": "Data Types & Collections",
-    "question": "Which of the following Python statements will result in the output: 6?\n\nA = [[1, 2, 3],\n     [4, 5, 6],\n     [7, 8, 9]]",
+    "question": "Which of the following Python statements will result in the output: 6?\n\nA = [[1, 2, 3],\n       [4, 5, 6],\n       [7, 8, 9]]",
     "options": [
       "a) A[2][1]",
       "b) A[1][2]",
@@ -611,7 +598,7 @@
     "explanation": "A[1][2] gives the value 6."
   },
   {
-    "id": 48,
+    "id": 47,
     "topic": "Variables & Identifiers",
     "question": "What is the maximum possible length of an identifier in Python?",
     "options": [
@@ -624,20 +611,7 @@
     "explanation": "Python identifiers can be of any length."
   },
   {
-    "id": 49,
-    "topic": "Control Flow",
-    "question": "What will be the output of the following Python program?\n\ni = 0\nwhile i < 5:\n    print(i)\n    i += 1\n    if i == 3:\n        break\nelse:\n    print(0)",
-    "options": [
-      "a) error",
-      "b)\n0\n1\n2\n3\n0",
-      "c)\n0\n1\n2",
-      "d) none of the mentioned"
-    ],
-    "correct": "c",
-    "explanation": "Loop breaks when i==3, so prints 0 1 2."
-  },
-  {
-    "id": 50,
+    "id": 48,
     "topic": "Data Types & Collections",
     "question": "What will be the output of the following Python code?\n\nx = 'abcd'\nfor i in range(len(x)):\n    print(i)",
     "options": [
@@ -650,7 +624,7 @@
     "explanation": "i iterates from 0 to 3."
   },
   {
-    "id": 51,
+    "id": 49,
     "topic": "Functions & Modules",
     "question": "What are the two main types of functions in Python?",
     "options": [
@@ -663,7 +637,7 @@
     "explanation": "Built-in and user-defined."
   },
   {
-    "id": 52,
+    "id": 50,
     "topic": "Data Types & Collections",
     "question": "What will be the output of the following Python program?\n\ndef addItem(listParam):\n    listParam += [1]\n \nmylist = [1, 2, 3, 4]\naddItem(mylist)\nprint(len(mylist))",
     "options": [
@@ -676,7 +650,7 @@
     "explanation": "listParam += [1] adds 1 to mylist, making its length 5."
   },
   {
-    "id": 53,
+    "id": 51,
     "topic": "Data Types & Collections",
     "question": "Which of the following is a Python tuple?",
     "options": [
@@ -689,7 +663,7 @@
     "explanation": "(1, 2, 3) is a tuple."
   },
   {
-    "id": 54,
+    "id": 52,
     "topic": "Data Types & Collections",
     "question": "What will be the output of the following Python code snippet?\n\nz=set('abc$de')\nprint('a' in z)",
     "options": [
@@ -702,7 +676,7 @@
     "explanation": "'a' is present in the set."
   },
   {
-    "id": 55,
+    "id": 53,
     "topic": "Built-in Functions & Standard Library",
     "question": "What will be the output of the following Python expression?\n\nprint(round(4.576))",
     "options": [
@@ -715,7 +689,7 @@
     "explanation": "round(4.576) gives 5."
   },
   {
-    "id": 56,
+    "id": 54,
     "topic": "Built-in Functions & Standard Library",
     "question": "Which of the following is a feature of Python DocString?",
     "options": [
@@ -728,7 +702,7 @@
     "explanation": "Docstrings provide documentation for modules, functions, classes, methods."
   },
   {
-    "id": 57,
+    "id": 55,
     "topic": "Built-in Functions & Standard Library",
     "question": "What will be the output of the following Python code?\n\nprint(\"Hello {0[0]} and {0[1]}\".format(('foo', 'bin')))",
     "options": [
@@ -741,9 +715,9 @@
     "explanation": "Accesses tuple elements inside format."
   },
   {
-    "id": 58,
+    "id": 56,
     "topic": "Built-in Functions & Standard Library",
-    "question": "What is output of print(math.pow(3, 2))?",
+    "question": "What is output of \n\nimport math\nprint(math.pow(3, 2))?",
     "options": [
       "a) 9.0",
       "b) None",
@@ -754,11 +728,11 @@
     "explanation": "math.pow returns a float."
   },
   {
-    "id": 59,
+    "id": 57,
     "topic": "Built-in Functions & Standard Library",
-    "question": "Which of the following is the use of id() function in python?",
+    "question": "Which of the following is the use of id() function in Python?",
     "options": [
-      "a) Every object in Python doesn’t have a unique id",
+      "a) Some Python objects may not have a unique id",
       "b) In Python Id function returns the identity of the object",
       "c) None of the mentioned",
       "d) All of the mentioned"
@@ -767,20 +741,20 @@
     "explanation": "id() returns the identity (unique id) of the object."
   },
   {
-    "id": 60,
+    "id": 58,
     "topic": "Data Types & Collections",
     "question": "What will be the output of the following Python code?\n\nx = [[0], [1]]\nprint((' '.join(list(map(str, x))),))",
     "options": [
       "a) 01",
       "b) [0] [1]",
-      "c) (’01’)",
-      "d) (‘[0] [1]’,)"
+      "c) ('01',)",
+      "d) ('[0] [1]',)"
     ],
     "correct": "d",
     "explanation": "Each sublist is converted to string, joined with a space, then put in a tuple."
   },
   {
-    "id": 61,
+    "id": 59,
     "topic": "Other / Advanced Topics",
     "question": "The process of pickling in Python includes ____________",
     "options": [
@@ -793,7 +767,7 @@
     "explanation": "Pickling is serializing Python objects to a byte stream."
   },
   {
-    "id": 62,
+    "id": 60,
     "topic": "Control Flow",
     "question": "What will be the output of the following Python code?\n\ndef foo():\n    try:\n        return 1\n    finally:\n        return 2\nk = foo()\nprint(k)",
     "options": [
