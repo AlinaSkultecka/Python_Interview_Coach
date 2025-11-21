@@ -4,7 +4,7 @@ from PySide6.QtWidgets import (
 )
 from PySide6.QtCore import Qt, QThread
 
-from data.ai_flashcards_generator import generate_ai_flashcards
+from pages.flashcards_game_over_view import FlashcardsGameOverView
 from pages.ui.flashcard_worker import FlashcardWorker
 from pages.ui.flashcard_widget import FlashcardWidget
 from pages.ui.animated_border_button import AnimatedBorderButton
@@ -14,7 +14,7 @@ class FlashcardsAIView(QWidget):
     """
     AI Flashcards screen.
     Step 1: User enters topic.
-    Step 2: App generates AI flashcards using GPT-4.1-mini.
+    Step 2: App generates AI flashcards using GPT.
     Step 3: User flips through cards similarly to premade mode.
     """
 
@@ -49,8 +49,14 @@ class FlashcardsAIView(QWidget):
         btn_back.setCursor(Qt.PointingHandCursor)
         btn_back.clicked.connect(self.return_to_menu)
 
+        # Counter label (like "1/10")
+        self.counter_label = QLabel(self._counter_text())
+        self.counter_label.setObjectName("Score")
+
         top_layout.addWidget(btn_back)
         top_layout.addStretch()
+        top_layout.addWidget(self.counter_label)
+
         outer.addWidget(top_row)
 
         # Main content ------------------------------------------------------
@@ -130,6 +136,12 @@ class FlashcardsAIView(QWidget):
                 );
             }
 
+            QLabel#Score {
+                color: #333;
+                font-weight: bold;
+                font-size: 16px;
+            }
+
             QPushButton#BackBtn {
                 background: qlineargradient(
                     x1:0,y1:0,x2:1,y2:0,
@@ -181,7 +193,7 @@ class FlashcardsAIView(QWidget):
             }
             QLabel#FlashcardText {
                 color: #222;
-                font-size: 16px;
+                font-size: 18px;
                 font-weight: 600;
             }
             QLabel#FlashHint {
@@ -198,10 +210,19 @@ class FlashcardsAIView(QWidget):
         """)
 
     # ------------------------------------------------------------------
+    # HELPERS
+    # ------------------------------------------------------------------
+    def _counter_text(self) -> str:
+        """Return text like '3/10'. If no cards yet, show '0/0'."""
+        if not self.cards:
+            return "0/0"
+        return f"{self.current_index + 1}/{len(self.cards)}"
+
+    # ------------------------------------------------------------------
     # LOGIC
     # ------------------------------------------------------------------
     def generate_cards(self):
-        # If user leaves it empty, default to "any"
+        # Default topic to "any" if empty
         topic = self.topic_input.text().strip()
         if not topic:
             topic = "any"
@@ -226,9 +247,12 @@ class FlashcardsAIView(QWidget):
         self.cards = cards
         self.btn_generate.setEnabled(True)
         self.btn_generate.setLoading(False)
+
         if not self.cards:
             QMessageBox.warning(self, "No cards", "The AI did not return any flashcards.")
+            self.counter_label.setText(self._counter_text())
             return
+
         self.current_index = 0
         self.show_card()
         self.flashcard.show()
@@ -245,12 +269,17 @@ class FlashcardsAIView(QWidget):
         self.flashcard.set_back_text(card.answer)
         self.flashcard.show_front()
 
+        # Update counter at top
+        self.counter_label.setText(self._counter_text())
+
     def next_card(self):
         self.current_index += 1
 
         if self.current_index >= len(self.cards):
-            QMessageBox.information(self, "Done", "You reviewed all AI-generated flashcards.")
-            self.return_to_menu()
+            # Reuse existing Game Over UI
+            self.game_over = FlashcardsGameOverView(self.main_menu)
+            self.game_over.show()
+            self.close()
             return
 
         self.show_card()
@@ -258,4 +287,6 @@ class FlashcardsAIView(QWidget):
     def return_to_menu(self):
         self.main_menu.show()
         self.close()
+
+
 
