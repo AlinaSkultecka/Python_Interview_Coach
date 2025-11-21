@@ -1,27 +1,23 @@
 from PySide6.QtWidgets import (
-    QWidget, QVBoxLayout, QHBoxLayout, QLabel,
-    QPushButton
+    QWidget, QVBoxLayout, QHBoxLayout, QLabel, QPushButton
 )
 from PySide6.QtCore import Qt
-from data.score_manager import load_best_score, save_best_score
 
 
-class PlayQuizGameOverView(QWidget):
+class FlashcardsModeView(QWidget):
     """
-    Screen shown when the quiz is finished.
-    Shows final score, congratulation message,
-    score comparison vs previous attempts,
-    and a button to restart the quiz.
+    Window shown between the Main Menu and the Flashcards gameplay.
+    Lets the user choose:
+        - Premade flashcards
+        - AI-generated flashcards (future feature)
     """
 
-    def __init__(self, main_menu, score_correct, score_total):
+    def __init__(self, main_menu):
         super().__init__()
 
         self.main_menu = main_menu
-        self.score_correct = score_correct
-        self.score_total = score_total
 
-        self.setWindowTitle("Quiz Completed")
+        self.setWindowTitle("Choose Flashcards Mode")
         self.setFixedSize(360, 640)
 
         # ======================================================
@@ -32,7 +28,7 @@ class PlayQuizGameOverView(QWidget):
         outer.setSpacing(0)
 
         # ======================================================
-        # TOP BAR
+        # TOP BAR (same as all screens)
         # ======================================================
         top_row = QWidget()
         top_row.setObjectName("TopRow")
@@ -52,70 +48,58 @@ class PlayQuizGameOverView(QWidget):
         outer.addWidget(top_row)
 
         # ======================================================
-        # CONTENT AREA
+        # CONTENT AREA — GRADIENT BACKGROUND
         # ======================================================
         content = QWidget()
         content.setObjectName("Root")
 
         root = QVBoxLayout(content)
         root.setContentsMargins(20, 60, 20, 20)
-        root.setSpacing(20)
+        root.setSpacing(15)
 
         outer.addWidget(content)
 
         # ======================================================
-        # MESSAGES
+        # TITLE
         # ======================================================
-        bravo = QLabel("Bravo!")
-        bravo.setAlignment(Qt.AlignCenter)
-        bravo.setStyleSheet("color: white; font-size: 48px; font-weight: 800;")
-        root.addWidget(bravo)
+        title = QLabel("Choose Mode")
+        title.setAlignment(Qt.AlignCenter)
+        title.setStyleSheet("color: white; font-size: 38px; font-weight: 800;")
+        root.addWidget(title)
 
-        msg = QLabel("Great job!\nYou finished the quiz!")
-        msg.setAlignment(Qt.AlignCenter)
-        msg.setStyleSheet("color: white; font-size: 20px; font-weight: 600;")
-        msg.setWordWrap(True)
-        root.addWidget(msg)
-
-        # Score Display
-        score_text = QLabel(f"Score: {self.score_correct} / {self.score_total}")
-        score_text.setAlignment(Qt.AlignCenter)
-        score_text.setStyleSheet(
-            "color: white; font-size: 24px; font-weight: 700; margin-top: 10px;"
-        )
-        root.addWidget(score_text)
-
-        # ======================================================
-        # SCORE COMPARISON LOGIC
-        # ======================================================
-        self.previous_best = load_best_score()
-
-        if self.score_correct > self.previous_best:
-            self.score_message = "You improved your score! 🎉"
-            save_best_score(self.score_correct)
-        elif self.score_correct == self.previous_best:
-            self.score_message = "You matched your best score! 💪"
-        else:
-            self.score_message = "Your score decreased — try again! 🔁"
-
-        comparison = QLabel(self.score_message)
-        comparison.setAlignment(Qt.AlignCenter)
-        comparison.setStyleSheet("color: white; font-size: 18px; font-weight: 600;")
-        root.addWidget(comparison)
-
-        # ======================================================
-        # RESTART BUTTON
-        # ======================================================
-        btn_restart = QPushButton("Play Again")
-        btn_restart.setObjectName("ActionBtn")
-        btn_restart.setCursor(Qt.PointingHandCursor)
-        btn_restart.clicked.connect(self.restart_quiz)
-        root.addWidget(btn_restart)
+        subtitle = QLabel("How would you like to play?")
+        subtitle.setAlignment(Qt.AlignCenter)
+        subtitle.setStyleSheet("color: white; font-size: 18px; font-weight: 600;")
+        root.addWidget(subtitle)
 
         root.addStretch()
 
         # ======================================================
-        # STYLE SHEET
+        # PLAY PREMADE FLASHCARDS BUTTON
+        # ======================================================
+        btn_premade = QPushButton("Play Premade Flashcards")
+        btn_premade.setObjectName("ActionBtn")
+        btn_premade.setCursor(Qt.PointingHandCursor)
+        btn_premade.setFixedHeight(80)
+        btn_premade.setMinimumWidth(300)
+        btn_premade.clicked.connect(self.open_premade)
+        root.addWidget(btn_premade)
+
+        # ======================================================
+        # PLAY AI-GENERATED FLASHCARDS BUTTON
+        # ======================================================
+        btn_ai = QPushButton("Play AI Flashcards")
+        btn_ai.setObjectName("ActionBtn")
+        btn_ai.setCursor(Qt.PointingHandCursor)
+        btn_ai.setFixedHeight(80)
+        btn_ai.setMinimumWidth(300)
+        btn_ai.clicked.connect(self.open_ai_flashcards)
+        root.addWidget(btn_ai)
+
+        root.addStretch()
+
+        # ======================================================
+        # STYLESHEET (same as Game Over, but purple/blue gradient)
         # ======================================================
         self.setStyleSheet("""
             QWidget#TopRow {
@@ -125,8 +109,8 @@ class PlayQuizGameOverView(QWidget):
             QWidget#Root {
                 background: qlineargradient(
                     x1:0, y1:0, x2:0, y2:1,
-                    stop:0 #D959A8,
-                    stop:1 #D95968
+                    stop:0 #6A9ABE,
+                    stop:1 #6456A3
                 );
             }
 
@@ -146,9 +130,8 @@ class PlayQuizGameOverView(QWidget):
 
             QPushButton#BackBtn:hover {
                 background: qlineargradient(
-                    x1:0, y1:0, x2:1, y2:0,
-                    stop:0 #ffe066,
-                    stop:1 #ffd84d
+                    x1:0,y1:0,x2:1,y2:0,
+                    stop:0 #ffe066, stop:1 #ffd84d
                 );
             }
 
@@ -158,27 +141,32 @@ class PlayQuizGameOverView(QWidget):
                 border: none;
                 border-radius: 22px;
                 padding: 12px;
-                font-size: 17px;
+                font-size: 20px;
                 font-weight: 600;
-                margin-top: 20px;
             }
 
             QPushButton#ActionBtn:hover {
-                background: #f2f2f2;
+                background: #f1f1f1;
             }
         """)
 
     # ======================================================
-    # NAVIGATION
+    # BUTTON LOGIC
     # ======================================================
 
     def return_to_menu(self):
         self.main_menu.show()
         self.close()
 
-    def restart_quiz(self):
-        """Restart the quiz from the beginning."""
-        from .play_quiz_view import PlayQuizView
-        self.new_quiz = PlayQuizView(main_menu=self.main_menu)
-        self.new_quiz.show()
+    def open_premade(self):
+        """Opens the standard flashcards view."""
+        from .flashcards_view import FlashcardsView
+        self.flashcards = FlashcardsView(main_menu=self.main_menu)
+        self.flashcards.show()
+        self.close()
+
+    def open_ai_flashcards(self):
+        from .flashcards_ai_view import FlashcardsAIView
+        self.ai_view = FlashcardsAIView(main_menu=self.main_menu)
+        self.ai_view.show()
         self.close()

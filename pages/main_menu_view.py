@@ -99,7 +99,7 @@ class MainMenuView(QWidget):
             "#6A9ABE", "#6456A3",
             image_path="flash-cards.png"
         )
-        btn_flashcards.clicked.connect(self.open_flashcards)
+        btn_flashcards.clicked.connect(self.open_flashcards_mode)
         main_layout.addWidget(btn_flashcards)
 
         # Push UI upwards slightly (visual balance)
@@ -121,4 +121,10 @@ class MainMenuView(QWidget):
         """Open the Flashcards window and hide the menu."""
         self.flashcards_window = FlashcardsView(main_menu=self)
         self.flashcards_window.show()
+        self.hide()
+
+    def open_flashcards_mode(self):
+        from .flashcards_mode_view import FlashcardsModeView
+        self.flashcards_mode = FlashcardsModeView(main_menu=self)
+        self.flashcards_mode.show()
         self.hide()
