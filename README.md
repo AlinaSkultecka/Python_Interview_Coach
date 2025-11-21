@@ -3,20 +3,39 @@
 A modern desktop app to help you prepare for Python interviews using quizzes and flashcards!
 
 
-### Features
+## ✨ Features
 
--  **Entrance Screen**: Enter your name to personalize your session.
--  **Modern UI**: Beautiful rounded gradient buttons inspired by mobile apps.
--  **Quiz Mode**: Practice Python interview questions with instant feedback.
--  **Flashcards Mode**: Review key Python concepts using flashcards.
--  **Custom Widgets**: Includes reusable `BigLevelButton` for multi-line, gradient-styled buttons.
+### Quiz Mode
+- Multiple-choice questions  
+- Instant correctness feedback  
+- Score tracking  
+- Game-over summary + best-score comparison  
+- Restart option
 
-### Tech Stack
+### Premade Flashcards 
+- 20 curated Python concept flashcards  
+- Smooth flip animation  
+- Game-over screen  
+
+### AI Flashcards (GPT-4.1 Mini)
+- Enter any topic → receive AI-generated flashcards  
+- Modern UI with animated “snake” border while generating  
+- Uses your OpenAI key stored safely in `.env`
+
+### Modern UI Components
+- Gradient menu buttons  
+- Animated answer cards  
+- Flip-card widget  
+- Clean mobile-style layout (360×640)  
+
+## 🛠️ Tech Stack
 
 - [Python 3](https://www.python.org/)
 - [PySide6 (Qt for Python)](https://doc.qt.io/qtforpython/)
+- [OpenAI GPT-4.1 Mini](https://platform.openai.com/docs/models/gpt-4.1-mini/)
 - Qt Designer-style custom widgets
 - JSON storage for quiz and flashcards data
+- `.env` for your OPEN AI KEY  
 
 ### Image Credits
 
@@ -26,7 +45,36 @@ A modern desktop app to help you prepare for Python interviews using quizzes and
 - Flashcards #1 by [Python Interview Questions](https://www.w3schools.com/python/python_interview_questions.asp)
 - Flashcards #2 by [Python Interview Questions](https://www.interviewbit.com/python-interview-questions/#list-vs-tuple)
 
-### Credits
+## 📦 Installation
+```bash
+1. Clone the repository
+   git clone https://github.com/AlinaSkultecka/PythonInterviewCoach.git
+   cd PythonInterviewCoach
+
+2. Create a virtual environment (recommended) 
+   /* Windows */
+   python -m venv venv
+   venv\Scripts\activate
+
+   /* macOS / Linux */
+   python3 -m venv venv
+   source venv/bin/activate
+
+3. Install dependencies
+   pip install -r requirements.txt
+
+4. Add your OpenAI API key (optional, required for AI flashcards)
+   Create a .env file and add:
+   OPENAI_API_KEY=your-openai-key-here
+
+5. Run the application
+   python main.py
+
+6. (Optional) Update dependencies later
+   pip install --upgrade -r requirements.txt
+```
+
+## 👩‍💻 Credits
 
 - Design inspiration from modern mobile quiz apps.
 - Created by Alina Skultecka (https://github.com/AlinaSkultecka).
