@@ -9,26 +9,47 @@ from pages.ui.flashcard_widget import FlashcardWidget
 
 
 class FlashcardsView(QWidget):
+    """
+    Flashcards study screen.
+    Displays one card at a time with flip animation to reveal answers.
+    """
+
     def __init__(self, main_menu):
         super().__init__()
         self.main_menu = main_menu
-        self.setWindowTitle("Flashcards")
-        self.setFixedSize(360, 640)
 
-        # Load flashcards
         self.cards = [generate_flashcard() for _ in range(20)]
         self.current_index = 0
 
-        # ===========================================================
-        # OUTER FRAME (Top bar + content area)
-        # ===========================================================
+        self._configure_window()
+        self._build_ui()
+        self._apply_styles()
+
+        self.show_card()
+
+    # ======================================================================
+    # WINDOW SETUP
+    # ======================================================================
+
+    def _configure_window(self):
+        """Initial window setup."""
+        self.setWindowTitle("Flashcards")
+        self.setFixedSize(360, 640)
+
+    # ======================================================================
+    # UI BUILDING
+    # ======================================================================
+
+    def _build_ui(self):
+        """Set up layout and all UI widgets."""
+
         outer = QVBoxLayout(self)
         outer.setContentsMargins(0, 0, 0, 0)
         outer.setSpacing(0)
 
-        # ===========================================================
-        # ROW 1: TOP WHITE BAR
-        # ===========================================================
+        # ------------------------------------------------------------------
+        # Top bar
+        # ------------------------------------------------------------------
         top_row = QWidget()
         top_row.setObjectName("TopRow")
         top_row.setFixedHeight(60)
@@ -36,13 +57,13 @@ class FlashcardsView(QWidget):
         top_layout = QHBoxLayout(top_row)
         top_layout.setContentsMargins(16, 12, 16, 12)
 
-        # Back button
+        # Return to menu
         self.btn_back = QPushButton("Return to Menu")
         self.btn_back.setObjectName("BackBtn")
-        self.btn_back.clicked.connect(self.return_to_menu)
         self.btn_back.setCursor(Qt.PointingHandCursor)
+        self.btn_back.clicked.connect(self.return_to_menu)
 
-        # Counter
+        # Counter label (1/20)
         self.counter_label = QLabel(self._counter_text())
         self.counter_label.setObjectName("Score")
 
@@ -52,9 +73,9 @@ class FlashcardsView(QWidget):
 
         outer.addWidget(top_row)
 
-        # ===========================================================
-        # ROW 2: CONTENT AREA — Gradient background
-        # ===========================================================
+        # ------------------------------------------------------------------
+        # Gradient content area
+        # ------------------------------------------------------------------
         content = QWidget()
         content.setObjectName("Root")
 
@@ -64,32 +85,42 @@ class FlashcardsView(QWidget):
 
         outer.addWidget(content)
 
-        # ===========================================================
-        # FLASHCARD FLIP WIDGET
-        # ===========================================================
+        # ------------------------------------------------------------------
+        # Flashcard
+        # ------------------------------------------------------------------
         self.card = FlashcardWidget()
-        self.card.face.setFixedSize(320, 340)  # larger card
+        self.card.face.setFixedSize(320, 340)
+
         root.addSpacerItem(QSpacerItem(0, 70, QSizePolicy.Minimum, QSizePolicy.Fixed))
         root.addWidget(self.card, alignment=Qt.AlignCenter)
         root.addSpacerItem(QSpacerItem(0, 70, QSizePolicy.Minimum, QSizePolicy.Fixed))
 
-        # ------------------------ Next button -----------------------
+        # ------------------------------------------------------------------
+        # Next Card Button
+        # ------------------------------------------------------------------
         self.btn_next = QPushButton("Next Card")
         self.btn_next.setObjectName("ActionBtn")
         self.btn_next.clicked.connect(self.next_card)
+
         root.addWidget(self.btn_next)
 
-        # ===========================================================
-        # STYLES — Matches PlayQuizView
-        # ===========================================================
+    # ======================================================================
+    # STYLES
+    # ======================================================================
+
+    def _apply_styles(self):
+        """CSS styling for entire page."""
         self.setStyleSheet("""
             QWidget#TopRow {
                 background: white;
             }
 
             QWidget#Root {
-                background: qlineargradient(x1:0,y1:0,x2:0,y2:1,
-                                            stop:0 #6A9ABE, stop:1 #6456A3);
+                background: qlineargradient(
+                    x1:0, y1:0, x2:0, y2:1,
+                    stop:0 #6A9ABE,
+                    stop:1 #6456A3
+                );
             }
 
             QLabel#Score {
@@ -99,8 +130,11 @@ class FlashcardsView(QWidget):
             }
 
             QPushButton#BackBtn {
-                background: qlineargradient(x1:0, y1:0, x2:1, y2:0,
-                                            stop:0 #fff7b1, stop:1 #ffd84d);
+                background: qlineargradient(
+                    x1:0, y1:0, x2:1, y2:0,
+                    stop:0 #fff7b1,
+                    stop:1 #ffd84d
+                );
                 color: #3a3500;
                 border: none;
                 border-radius: 18px;
@@ -110,8 +144,11 @@ class FlashcardsView(QWidget):
             }
 
             QPushButton#BackBtn:hover {
-                background: qlineargradient(x1:0,y1:0,x2:1,y2:0,
-                                            stop:0 #ffe066, stop:1 #ffd84d);
+                background: qlineargradient(
+                    x1:0, y1:0, x2:1, y2:0,
+                    stop:0 #ffe066,
+                    stop:1 #ffd84d
+                );
             }
 
             QPushButton#ActionBtn {
@@ -138,12 +175,14 @@ class FlashcardsView(QWidget):
                 font-size: 18px;
                 font-weight: 600;
             }
-           QLabel#FlashHint {
+
+            QLabel#FlashHint {
                 color: #999;
                 font-size: 13px;
                 font-weight: 500;
             }
-           QLabel#FlashTitle {
+
+            QLabel#FlashTitle {
                 color: #555;
                 font-size: 16px;
                 font-weight: 700;
@@ -151,32 +190,38 @@ class FlashcardsView(QWidget):
             }
         """)
 
-        # Load first card
-        self.show_card()
-
-    # ===========================================================
+    # ======================================================================
     # LOGIC
-    # ===========================================================
+    # ======================================================================
+
     def _counter_text(self):
+        """Returns text like '3/20'."""
         return f"{self.current_index + 1}/{len(self.cards)}"
 
     def show_card(self):
-        card = self.cards[self.current_index]
-        question = card.question.strip()
+        """Loads the current card into the UI."""
+        card_data = self.cards[self.current_index]
+        question = card_data.question.strip()
 
-        self.card.set_front_text(question[0].upper() + question[1:])
-        self.card.set_back_text(card.answer)
+        # Capitalize first letter
+        formatted_question = question[0].upper() + question[1:] if question else question
+
+        self.card.set_front_text(formatted_question)
+        self.card.set_back_text(card_data.answer)
         self.card.show_front()
 
-        # NEW: update title
+        # Title: "Question 5"
         self.card.title_label.setText(f"Question {self.current_index + 1}")
 
+        # Update counter at top-right
         self.counter_label.setText(self._counter_text())
 
     def next_card(self):
+        """Moves to the next flashcard (loops)."""
         self.current_index = (self.current_index + 1) % len(self.cards)
         self.show_card()
 
     def return_to_menu(self):
+        """Return to main menu."""
         self.main_menu.show()
         self.close()

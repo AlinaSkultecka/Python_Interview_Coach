@@ -1,16 +1,33 @@
 from PySide6.QtWidgets import (
-    QWidget, QVBoxLayout, QLabel, QLineEdit, QPushButton, QSpacerItem, QSizePolicy, QFrame
+    QWidget, QVBoxLayout, QLabel, QLineEdit, QPushButton,
+    QSpacerItem, QSizePolicy, QFrame
 )
 from PySide6.QtCore import Qt
 from PySide6.QtGui import QPalette, QColor
 
+
 class EntranceWindow(QWidget):
+    """
+    The very first screen of the app.
+    Welcomes the user and collects their name inside a centered card.
+    """
+
     def __init__(self):
         super().__init__()
+
+        self._configure_window()
+        self._build_ui()
+
+    # ======================================================================
+    # WINDOW SETUP
+    # ======================================================================
+
+    def _configure_window(self):
+        """Basic window properties and background gradient."""
         self.setWindowTitle("Welcome")
         self.setFixedSize(360, 640)
 
-        # Set background gradient from #FCF6C2 (top) to #E5FCC2 (bottom)
+        # Smooth gradient background
         self.setStyleSheet("""
             QWidget {
                 background: qlineargradient(
@@ -21,51 +38,86 @@ class EntranceWindow(QWidget):
             }
         """)
 
-        layout = QVBoxLayout()
+    # ======================================================================
+    # UI BUILDING
+    # ======================================================================
+
+    def _build_ui(self):
+        """Constructs the entire entrance layout."""
+
+        layout = QVBoxLayout(self)
         layout.setSpacing(10)
         layout.setContentsMargins(20, 70, 20, 130)
 
-        # Welcome to Heading
+        # --- Heading --------------------------------------------------------
         welcome = QLabel("Welcome to")
-        welcome.setStyleSheet("font-size: 20px; font-weight: bold; color: #4C4982; background: transparent")
         welcome.setAlignment(Qt.AlignHCenter)
-        layout.addWidget(welcome, alignment=Qt.AlignHCenter)
-
-        # Game name title heading
-        gameTitle = QLabel("PYTHON\nINTERVIEW\nCOACH")
-        gameTitle.setStyleSheet("font-size: 44px; font-weight: bold; color: #4C4982; background: transparent")
-        gameTitle.setAlignment(Qt.AlignHCenter)
-        gameTitle.setWordWrap(True)
-        layout.addWidget(gameTitle, alignment=Qt.AlignHCenter)
-
-        # Extra space before the card
-        layout.addSpacerItem(QSpacerItem(10, 40, QSizePolicy.Minimum, QSizePolicy.Fixed))
-
-        # White card for user entrance
-        card = QFrame()
-        card.setStyleSheet("""
-            background: white;
-            border-radius: 18px;
+        welcome.setStyleSheet("""
+            font-size: 20px;
+            font-weight: bold;
+            color: #4C4982;
+            background: transparent;
         """)
-        card.setFixedWidth(300)  # You can adjust width here
+        layout.addWidget(welcome)
+
+        # Main title (multi-line)
+        title = QLabel("PYTHON\nINTERVIEW\nCOACH")
+        title.setAlignment(Qt.AlignHCenter)
+        title.setWordWrap(True)
+        title.setStyleSheet("""
+            font-size: 44px;
+            font-weight: bold;
+            color: #4C4982;
+            background: transparent;
+        """)
+        layout.addWidget(title)
+
+        # Spacer before card
+        layout.addSpacerItem(
+            QSpacerItem(10, 40, QSizePolicy.Minimum, QSizePolicy.Fixed)
+        )
+
+        # --- Card container -------------------------------------------------
+        card = QFrame()
+        card.setObjectName("EntranceCard")
+        card.setFixedWidth(300)
+        card.setStyleSheet("""
+            QFrame#EntranceCard {
+                background: white;
+                border-radius: 18px;
+            }
+        """)
 
         card_layout = QVBoxLayout(card)
         card_layout.setSpacing(14)
         card_layout.setContentsMargins(20, 20, 20, 20)
 
-        # Username entrance inside the card
-        label = QLabel("Enter your name:")
-        label.setAlignment(Qt.AlignLeft)
-        label.setStyleSheet("font-size: 20px; font-weight: bold;")
-        card_layout.addWidget(label)
+        # --- Card Contents --------------------------------------------------
+        prompt = QLabel("Enter your name:")
+        prompt.setAlignment(Qt.AlignLeft)
+        prompt.setStyleSheet("""
+            font-size: 20px;
+            font-weight: bold;
+            color: #4C4982;
+            background: white;
+        """)
+        card_layout.addWidget(prompt)
 
+        # Username input field
         self.name_input = QLineEdit()
         self.name_input.setPlaceholderText("Your name")
         self.name_input.setMaxLength(32)
         self.name_input.setFixedHeight(40)
-        self.name_input.setStyleSheet("font-size: 18px; padding-left: 10px;")
+        self.name_input.setStyleSheet("""
+            font-size: 18px;
+            padding-left: 10px;
+            background: white;
+            border: none;             
+            outline: none;          
+        """)
         card_layout.addWidget(self.name_input)
 
+        # Continue button
         self.btn_continue = QPushButton("Continue")
         self.btn_continue.setFixedHeight(40)
         self.btn_continue.setStyleSheet("""
@@ -77,7 +129,7 @@ class EntranceWindow(QWidget):
         """)
         card_layout.addWidget(self.btn_continue)
 
-        # Add the card to the main layout, centered
+        # Add card centered
         layout.addWidget(card, alignment=Qt.AlignHCenter)
 
         self.setLayout(layout)
