@@ -7,7 +7,7 @@ from PySide6.QtCore import Qt, QEvent
 from data.question_generator import generate_quiz_question
 from pages.ui.feedback_overlay import FeedbackOverlay
 from pages.ui.answer_button import AnswerButton
-
+from pages.play_quiz_game_over_view import PlayQuizGameOverView
 
 class PlayQuizView(QWidget):
     """
@@ -29,6 +29,7 @@ class PlayQuizView(QWidget):
         self.total_count = 0
         self.current_question = None
         self.question_counter = 0
+        self.total_questions = 20
 
         # Used when a correct answer is selected
         # and the system waits for key/click to continue
@@ -203,10 +204,15 @@ class PlayQuizView(QWidget):
             button.setEnabled(False)
 
     def _advance_after_correct(self):
-        """Resets UI and loads the next question."""
+        """Resets UI and loads the next question, or game over."""
+        # If finished, show end screen
+        if self.question_counter >= self.total_questions:
+            self.open_game_over()
+            return
+
+        # Otherwise continue normally
         for btn in self.option_buttons:
-            if hasattr(btn, "setState"):
-                btn.setState(None)
+            btn.setState(None)
             btn.setSelected(False)
             btn.setEnabled(True)
 
@@ -218,26 +224,39 @@ class PlayQuizView(QWidget):
 
     def show_question(self):
         """Loads and displays a new quiz question."""
+        # Check if finished BEFORE loading new question
+        if self.question_counter >= self.total_questions:
+            self.open_game_over()
+            return
+
+        # Then continue normally
         self.question_counter += 1
         self._update_top()
 
         question = generate_quiz_question()
         self.current_question = question
 
-        # Question metadata
         self.meta_label.setText(f"Question {self.question_counter}")
 
-        # Capitalize first letter of question text
         text = question.question.strip()
-        self.question_label.setText(text[0].upper() + text[1:] if text else text)
+        self.question_label.setText(
+            text[0].upper() + text[1:] if text else text
+        )
 
-        # Update answer buttons
         for i, btn in enumerate(self.option_buttons):
             btn.setText(question.options[i])
             btn.setSelected(False)
-            if hasattr(btn, "setState"):
-                btn.setState(None)
+            btn.setState(None)
             btn.setEnabled(True)
+
+    def open_game_over(self):
+        self.game_over_window = PlayQuizGameOverView(
+            main_menu=self.main_menu,
+            score_correct=self.correct_count,
+            score_total=self.total_count
+        )
+        self.game_over_window.show()
+        self.close()
 
     def check_answer(self, selected_index):
         """Handles a button click and determines correctness."""
@@ -286,7 +305,7 @@ class PlayQuizView(QWidget):
 
         # Show explanation overlay
         msg = f"Correct answer: {question.correct}.\n{question.explanation}"
-        self.overlay.show_message("Incorrect", msg, on_close=self.show_question, state="wrong")
+        self.overlay.show_message("Incorrect", msg, on_close=self._after_wrong_answer, state="wrong")
 
     # ======================================================================
     # NAVIGATION + EVENT HANDLING
@@ -309,6 +328,14 @@ class PlayQuizView(QWidget):
         self.waiting_for_next = False
         self.continue_label.hide()
         self._advance_after_correct()
+
+    def _after_wrong_answer(self):
+        """Handles flow after wrong answer."""
+        if self.question_counter >= self.total_questions:
+            self.open_game_over()
+            return
+
+        self.show_question()
 
     def return_to_menu(self):
         """Returns to the main menu."""

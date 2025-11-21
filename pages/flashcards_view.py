@@ -6,6 +6,7 @@ from PySide6.QtCore import Qt
 
 from data.question_generator import generate_flashcard
 from pages.ui.flashcard_widget import FlashcardWidget
+from pages.flashcards_game_over_view import FlashcardsGameOverView
 
 
 class FlashcardsView(QWidget):
@@ -217,9 +218,20 @@ class FlashcardsView(QWidget):
         self.counter_label.setText(self._counter_text())
 
     def next_card(self):
-        """Moves to the next flashcard (loops)."""
-        self.current_index = (self.current_index + 1) % len(self.cards)
+        """Moves to the next flashcard or opens Game Over window."""
+        self.current_index += 1
+
+        if self.current_index >= len(self.cards):
+            self.open_game_over()
+            return
+
         self.show_card()
+
+    def open_game_over(self):
+        """Open the game over UI."""
+        self.game_over_window = FlashcardsGameOverView(main_menu=self.main_menu)
+        self.game_over_window.show()
+        self.close()
 
     def return_to_menu(self):
         """Return to main menu."""
