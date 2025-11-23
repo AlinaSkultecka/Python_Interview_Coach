@@ -47,7 +47,7 @@ A modern desktop app to help you prepare for Python interviews using quizzes and
 
 ## 📦 Installation
 💡 Note: PyCharm is optional.
-You only need Python to run this app. Use PyCharm only if you want to edit or develop the code.
+You only need Python to run this app.
 ```bash
 1. Clone the repository
    git clone https://github.com/AlinaSkultecka/PythonInterviewCoach.git
