@@ -17,7 +17,7 @@ A modern desktop app to help you prepare for Python interviews using quizzes and
 - Smooth flip animation  
 - Game-over screen  
 
-### AI Flashcards (GPT-4.1 Mini)
+### AI Flashcards
 - Enter any topic → receive AI-generated flashcards  
 - Modern UI with animated “snake” border while generating  
 - Uses your OpenAI key stored safely in `.env`
