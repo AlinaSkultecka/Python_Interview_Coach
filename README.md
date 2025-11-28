@@ -46,6 +46,8 @@ A modern desktop app to help you prepare for Python interviews using quizzes and
 - Flashcards #2 by [Python Interview Questions](https://www.interviewbit.com/python-interview-questions/#list-vs-tuple)
 
 ## 📦 Installation
+💡 Note: PyCharm is optional.
+You only need Python to run this app.
 ```bash
 1. Clone the repository
    git clone https://github.com/AlinaSkultecka/PythonInterviewCoach.git
